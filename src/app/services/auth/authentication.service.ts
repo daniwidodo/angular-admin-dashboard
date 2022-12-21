@@ -28,4 +28,10 @@ export class AuthenticationService {
       headers: this.header,
     });
   }
+
+  getUser(){
+    const newObject: any = localStorage.getItem('user');
+    const obj = JSON.parse(newObject);
+    return obj
+  }
 }
