@@ -25,7 +25,7 @@ import { RegisterComponent } from './components/auth/register/register.component
     declarations: [
         AppComponent,
         // DashboardComponent,
-        // LoginComponent,
+        LoginComponent,
         RegisterComponent,
         // PostsComponent,
         // CategoriesComponent,

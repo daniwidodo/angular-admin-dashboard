@@ -1,5 +1,3 @@
-export const BASE_URL = 'localhost'
-
 export const SIDENAV_SETTING = {
     sidenavColor: '#24344C',
     sidenavFontSize: '0.8rem'

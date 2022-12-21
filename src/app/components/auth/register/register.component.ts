@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AuthenticationService } from 'src/app/services/auth/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -18,16 +14,23 @@ export class RegisterComponent implements OnInit {
     password: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private auth: AuthenticationService) {}
 
-  ngOnInit(): void {
-    console.log(this.registerForm.controls.username.errors)
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log(this.registerForm.getRawValue());
-    if(!this.registerForm.valid){
-      alert('Please fill all required forms')
+    if (!this.registerForm.valid) {
+      alert('Please fill all required forms');
     }
+
+    const body = {
+      username: this.registerForm.value.username,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password,
+    };
+
+    this.auth.register(body).subscribe((i) => {
+      console.log(i);
+    });
   }
 }
