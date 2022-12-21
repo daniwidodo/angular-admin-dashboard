@@ -1,0 +1,46 @@
+<div class="grid h-screen place-items-center">
+    <div class="border shadow-lg w-96 rounded">
+      <div class="p-5 h-full relative">
+        <div class="w-full h-12 mb-8 flex justify-center items-center">
+          <img src=" " alt="" class="h-10 w-10 mr-4 bg-red-300 rounded-full" />
+          <p style="margin: 0;">Your Company</p>
+        </div>
+        <p class="flex justify-center mb-2">Register form</p>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex flex-col">
+            <input
+            type="text"
+            placeholder="Username"
+            class="border h-8 mb-2 rounded px-2"
+            formControlName="username"
+            required
+          />
+          <small *ngIf="registerForm.controls.username.errors?.['required']" class="text-red-300">
+            username is required.
+          </small>
+          <input
+            type="email"
+            placeholder="Email"
+            class="border h-8 mb-2 rounded px-2"
+            formControlName="email"
+            required
+          />
+          <small *ngIf="registerForm.controls.email.errors?.['required']" class="text-red-300">
+            email is required.
+          </small>
+          <input
+            type="password"
+            placeholder="Password"
+            class="border h-8 mb-2 rounded px-2"
+            formControlName="password"
+            required
+          />
+          <small *ngIf="registerForm.controls.password.errors?.['required']" class="text-red-300">
+            password is required.
+          </small>
+          <button  type="submit" class="border h-8 bottom-5 mb-2 mt-10 rounded hover:border-blue-500 hover:text-blue-600" >Submit</button>
+          <button class="border h-8 bottom-5 mb-2 bg-blue-400 text-white rounded">Back to login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

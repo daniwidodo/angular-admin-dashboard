@@ -1,0 +1,11 @@
+<!-- <p>admin works!</p> -->
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="w-64 p-2 bg-indigo-800">
+      <app-navigation-logo></app-navigation-logo>
+    <app-navigation-menu></app-navigation-menu>
+    <app-navigation-footer></app-navigation-footer>
+  </mat-drawer>
+  <mat-drawer-content class="p-2 pt-10">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
