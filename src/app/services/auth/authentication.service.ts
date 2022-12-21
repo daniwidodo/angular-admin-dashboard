@@ -2,10 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { base_url } from '../../../environments/environment';
 
-interface IAuth {
+export interface IAuth {
   username?: string | null | undefined;
   email: string | null | undefined;
   password: string | null | undefined;
+}
+
+export interface IUser {
+id?: number;
+username?: string;
+email?: string;
 }
 
 @Injectable({
